@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture005;
 
 import java.util.Scanner;
 
-public class Question26 {
+public class Question26_Alınan_Kelimenin_Charlari {
 
 	public static void main(String[] args) {
 		/*

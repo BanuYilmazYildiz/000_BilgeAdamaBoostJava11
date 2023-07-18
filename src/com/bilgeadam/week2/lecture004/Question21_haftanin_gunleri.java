@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture004;
 
 import java.util.Scanner;
 
-public class Question21 {
+public class Question21_haftanin_gunleri {
 	/*
 	 * Kullanıcı 1 ile 7 arasında bir sayı girsin. (1 v e 7 dahil) Bu sayıya denk
 	 * gelen haftanın günleri

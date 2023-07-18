@@ -2,7 +2,7 @@ package com.bilgeadam.week3.lecture002;
 
 import java.util.Scanner;
 
-public class Question30 {
+public class Question30_Iban {
 
 	public static void main(String[] args) {
 		/*

@@ -1,6 +1,6 @@
 package com.bilgeadam.week3.lecture002;
 
-public class Question31 {
+public class Question31_Array_Genel {
 
 	public static void main(String[] args) {
 		/*

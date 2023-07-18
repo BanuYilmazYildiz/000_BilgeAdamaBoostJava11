@@ -1,6 +1,6 @@
 package com.bilgeadam.week2.lecture005;
 
-public class Question25 {
+public class Question25_Stringler_Genel {
 
 	public static void main(String[] args) {
 		String value = " Merhaba Dünya ";

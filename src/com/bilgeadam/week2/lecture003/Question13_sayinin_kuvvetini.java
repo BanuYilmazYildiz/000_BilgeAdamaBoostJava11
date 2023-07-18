@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture003;
 
 import java.util.Scanner;
 
-public class Question13 {
+public class Question13_sayinin_kuvvetini {
 	/*
 	 * Dışarıdan taban değeri ve üs isimli 2 tane değişken alınacak. 2^5 gibi
 	 * hesaplama yapılacak

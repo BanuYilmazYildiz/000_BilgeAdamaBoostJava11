@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture003;
 
 import java.util.Scanner;
 
-public class Question9 {
+public class Question9_carpim_tablosu {
 	/*
 	 * Kullanıcıdan girilen 1-10 arasındaki sayının çarpım tablosunu yazdıran
 	 * program.

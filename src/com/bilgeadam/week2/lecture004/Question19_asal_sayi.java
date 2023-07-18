@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture004;
 
 import java.util.Scanner;
 
-public class Question19 {
+public class Question19_asal_sayi {
 	/*
 	 * Girilen sayının asal olup olmadığını gösteren program
 	 */

@@ -2,7 +2,7 @@ package com.bilgeadam.week3.lecture002;
 
 import java.util.Scanner;
 
-public class Question32 {
+public class Question32_Ulke_Diziler {
 
 	public static void main(String[] args) {
 		/*

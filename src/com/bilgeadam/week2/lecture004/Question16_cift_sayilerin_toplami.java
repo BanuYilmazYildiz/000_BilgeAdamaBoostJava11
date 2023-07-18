@@ -1,6 +1,6 @@
 package com.bilgeadam.week2.lecture004;
 
-public class Question16 {
+public class Question16_cift_sayilerin_toplami {
 	/*
 	 * 1'den 100'e kadar olan çift sayıların toplamının tek sayıların toplamına
 	 * oranı

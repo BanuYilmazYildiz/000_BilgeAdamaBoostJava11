@@ -1,6 +1,6 @@
 package com.bilgeadam.week3.lecture001;
 
-public class Question28 {
+public class Question28_for_ile_virgul_ayirma {
 
 	public static void main(String[] args) {
 		/*

@@ -2,7 +2,7 @@ package com.bilgeadam.week3.lecture001;
 
 import java.util.Scanner;
 
-public class Question29 {
+public class Question29_Menulu_String {
 
 	public static void main(String[] args) {
 		/*

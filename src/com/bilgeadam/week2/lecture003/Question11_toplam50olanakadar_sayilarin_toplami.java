@@ -1,6 +1,6 @@
 package com.bilgeadam.week2.lecture003;
 
-public class Question11 {
+public class Question11_toplam50olanakadar_sayilarin_toplami {
 	/*
 	 * 1 den baslayarak gelen bütün sayilari toplayalım. Toplamımız 50 yi geçene
 	 * kadar çalışsın. Sonuçta toplamı yazdıralım ve bu döngünün kaç kere

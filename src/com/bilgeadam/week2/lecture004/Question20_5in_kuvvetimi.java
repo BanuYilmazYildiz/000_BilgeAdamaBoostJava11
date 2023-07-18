@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture004;
 
 import java.util.Scanner;
 
-public class Question20 {
+public class Question20_5in_kuvvetimi {
 	/*
 	 * Girilen sayinin %in kuvveti olup olmadığını bulan
 	 */

@@ -1,6 +1,6 @@
 package com.bilgeadam.week2.lecture003;
 
-public class Question14 {
+public class Question14_alfabe {
 	/*
 	 * a dan z ye alfabeyi yazdır.
 	 */

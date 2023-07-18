@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture003;
 
 import java.util.Scanner;
 
-public class Question12 {
+public class Question12_girilen_sayi_basamaklari_toplami {
 	/*
 	 * Girilen sayının basamakları toplamını yazdırınız
 	 */

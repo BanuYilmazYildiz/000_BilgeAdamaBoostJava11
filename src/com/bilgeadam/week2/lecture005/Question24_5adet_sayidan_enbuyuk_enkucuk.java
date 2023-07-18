@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture005;
 
 import java.util.Scanner;
 
-public class Question24 {
+public class Question24_5adet_sayidan_enbuyuk_enkucuk {
 
 	public static void main(String[] args) {
 		/*

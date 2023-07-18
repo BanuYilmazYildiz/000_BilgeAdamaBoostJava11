@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture003;
 
 import java.util.Scanner;
 
-public class Question15 {
+public class Question15_klavyeden_0_girilene_kadar {
 	/*
 	 * Klavyeden 0 girilinceye kadar sayı okumaya devam et, 0 girildiğinde sayıların
 	 * toplamını ve ortalamasını yazdır

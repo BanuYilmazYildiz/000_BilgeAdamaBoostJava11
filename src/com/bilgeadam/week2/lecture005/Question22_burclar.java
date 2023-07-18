@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture005;
 
 import java.util.Scanner;
 
-public class Question22 {
+public class Question22_burclar {
 
 	public static void main(String[] args) {
 		// Dışarıdan ay ve gün değerini ayrı ayrı bir sayı olarak alacaksınız buna göre

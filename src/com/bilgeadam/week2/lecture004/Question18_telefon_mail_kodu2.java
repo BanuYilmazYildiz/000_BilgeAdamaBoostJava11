@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture004;
 
 import java.util.Scanner;
 
-public class Question18 {
+public class Question18_telefon_mail_kodu2 {
 	/*
 	 * Telefon kodu ve e-mail kodu tanımlanacak. Kullanıcıdan e-mail ve telefon kodu
 	 * girmesini isteyeceğiz. hem sms hem e mail kodu hatalıysa bir çıktı. sms

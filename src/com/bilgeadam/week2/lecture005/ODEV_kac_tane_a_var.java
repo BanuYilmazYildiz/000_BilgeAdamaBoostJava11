@@ -2,7 +2,7 @@ package com.bilgeadam.week2.lecture005;
 
 import java.util.Scanner;
 
-public class ODEV {
+public class ODEV_kac_tane_a_var {
 
 	public static void main(String[] args) {
 		/*
