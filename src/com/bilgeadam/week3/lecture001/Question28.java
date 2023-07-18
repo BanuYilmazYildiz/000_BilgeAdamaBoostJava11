@@ -1,4 +1,4 @@
-package week3.lecture001;
+package com.bilgeadam.week3.lecture001;
 
 public class Question28 {
 
