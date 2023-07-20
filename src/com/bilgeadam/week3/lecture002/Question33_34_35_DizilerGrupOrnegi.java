@@ -2,7 +2,7 @@ package com.bilgeadam.week3.lecture002;
 
 import java.util.Scanner;
 
-public class Question33_DizilerGrupOrnegi {
+public class Question33_34_35_DizilerGrupOrnegi {
 
 	public static void main(String[] args) {
 
@@ -75,6 +75,9 @@ public class Question33_DizilerGrupOrnegi {
 			}
 
 			case 3: {
+				// SORU 3 bir dizide ard arda gelen 2 indexdeki sayı değeri 2 ise true yazdırıp
+				// döngü sonlansın yoksa false yazdıralım 2, -256, 2, 1258, 2, 2
+
 				int[] dizi = { 2, -256, 2, 1258, 2, 2 };
 				boolean kontrol1 = false;
 
@@ -106,5 +109,7 @@ public class Question33_DizilerGrupOrnegi {
 			}
 
 		}
+		scanner.close();
+
 	}
 }
