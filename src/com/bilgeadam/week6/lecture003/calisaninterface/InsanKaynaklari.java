@@ -14,14 +14,14 @@ public class InsanKaynaklari extends Calisan implements IInsanKaynaklari {
 
 	@Override
 	public void zamYap(Calisan calisan, double zamOrani) {
-		double zamliUcret = calisan.getMaas() + (calisan.getMaas() * zamOrani);
+		double zamliUcret = calisan.getMaas() + (calisan.getMaas() * zamOrani / 100);
 
 		if (calisan.getClass().getSimpleName().equals("Muhendis")) { // bu kullanım daha doğru
 			zamliUcret += 250;
 		}
-		if (calisan.getIsUnvani().contains("Mühendis")) {
-			zamliUcret += 250;
-		}
+//		if (calisan.getIsUnvani().contains("Mühendis")) {
+//			zamliUcret += 250;
+//		}
 		calisan.setMaas(zamliUcret);
 		calisan.setIsUnvani(getMaas());
 
@@ -29,7 +29,7 @@ public class InsanKaynaklari extends Calisan implements IInsanKaynaklari {
 
 	@Override
 	public void unvanBelirle() {
-		// TODO Auto-generated method stub
+		System.out.println("Ünvan belirlendi");
 
 	}
 

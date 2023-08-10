@@ -33,36 +33,33 @@ public class Test {
 		 *
 		 */
 
-		OfisCalisani ofisCalisani = new OfisCalisani("Alperen", "Ikınci");
-		System.out.println(ofisCalisani.getIsim() + " " + ofisCalisani.getSoyisim());
+		OfisCalisani ofisCalisani = new OfisCalisani("Banu", "Yılmaz");
 		System.out.println(ofisCalisani.getMaas());
-//		ofisCalisani.setIsUnvani(ofisCalisani.getMaas());
-		ofisCalisani.maasZammi(0);
 		System.out.println(ofisCalisani.getIsUnvani());
-		ofisCalisani.maasZammi(50);
-		System.out.println(ofisCalisani.getIsUnvani());
+		// 2 paremetreli constructor set unvan methodunu çalıştırmadığı için null
+		// donuyor.
 
-		System.out.println("**************");
-		Calisan ofisCalisani2 = new OfisCalisani("Sedat", "Akdoğan", 12000);
+		OfisCalisani ofisCalisani2 = new OfisCalisani("Batu", "Yıldız", 10_000);
+		System.out.println(ofisCalisani2.getMaas());
 		System.out.println(ofisCalisani2.getIsUnvani());
+		// 3 parametreli constructor maas yazıldığı ve setUnvan çalıştığı için unvan
+		// dönüyor
 
-		System.out.println("**************");
 		Muhendis muhendis = new Muhendis("Banu", "Yılmaz");
-		System.out.println(muhendis.getIsim() + " " + muhendis.getSoyisim());
-		muhendis.setMaas(10_000);
-		muhendis.setIsUnvani(muhendis.getMaas());
-		System.out.println(muhendis.getMaas());
 		System.out.println(muhendis.getIsUnvani());
-		muhendis.maasZammi(100);
 		System.out.println(muhendis.getMaas());
-		System.out.println(muhendis.getIsUnvani());
 
-		System.out.println("**************");
-		Calisan muhendis2 = new Muhendis("Batu", "Yıldız", 15_000);
+		Muhendis muhendis2 = new Muhendis("Batu", "Yıldız", 15_000);
 		System.out.println(muhendis2.getIsUnvani());
-		muhendis2.maasZammi(60);
 		System.out.println(muhendis2.getMaas());
-		System.out.println(muhendis2.getIsUnvani());
+		System.out.println(muhendis2.getClass().getSimpleName());
+		System.out.println(ofisCalisani.getClass().getSimpleName());
+
+		InsanKaynaklari insanKaynaklari = new InsanKaynaklari("Serli", "Cakir");
+		insanKaynaklari.zamYap(muhendis2, 20);
+		System.out.println(muhendis2.getMaas());
+		insanKaynaklari.zamYap(ofisCalisani2, 10);
+		System.out.println(ofisCalisani2.getMaas());
 	}
 
 }
