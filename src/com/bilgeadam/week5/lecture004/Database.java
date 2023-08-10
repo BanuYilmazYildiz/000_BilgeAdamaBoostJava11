@@ -18,13 +18,17 @@ public class Database {
 	static int sayac = 0;
 
 	public static void kullaniciEkle(Kullanici kullanici) {
+
+		if (uzunluk == kullaniciListesi.length - 2) {
+			listeBoyutunuArtır();
+		}
+
 		if (uzunluk < kullaniciListesi.length) {
 			kullaniciListesi[uzunluk] = kullanici;
 			uzunluk++;
-			if (uzunluk == kullaniciListesi.length - 2) {
-				listeBoyutunuArtır();
-			}
+
 		}
+
 	}
 
 	public static void listeBoyutunuArtır() {
@@ -39,7 +43,9 @@ public class Database {
 		for (int i = 0; i < kullaniciListesi.length; i++) {
 			if (kullaniciListesi[i] != null) {
 				if (kullaniciListesi[i].email.equals(email) && kullaniciListesi[i].sifre.equals(sifre)) {
-					kullaniciAdi = kullaniciListesi[i].isim;
+//					kullaniciAdi = kullaniciListesi[i].isim;
+					System.out.println("Hosgeldiniz -> " + kullaniciListesi[i].isim);
+					// aynı anda birden fazla giriş yapıldığı durumda bu daha mantıklı
 					return true;
 				}
 			}

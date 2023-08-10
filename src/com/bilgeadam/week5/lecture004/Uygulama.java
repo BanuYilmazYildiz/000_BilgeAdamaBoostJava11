@@ -44,14 +44,6 @@ public class Uygulama {
 			case 4:
 				System.err.println("Çıkış Yapıldı");
 				break;
-			case 5:
-//				for (int i = 0; i < Database.kullaniciListesi.length; i++) {
-//					if (Database.kullaniciListesi[i] != null) {
-//						System.out.println(Database.kullaniciListesi[i].isim + " " + Database.kullaniciListesi[i].id);
-//					}
-//				}
-				System.out.println(Database.kullaniciListesi.length);
-				break;
 			default:
 				System.err.println("Lütfen geçerli seçim yapınız.");
 			}
@@ -74,23 +66,43 @@ public class Uygulama {
 
 	}
 
+//	private void girisYap() {
+//
+//		System.out.println("********* Giris Ekrani *********");
+//		System.out.print("Lütfen mailinizi giriniz : ");
+//		String mail = sc.nextLine();
+//		System.out.print("Lütfen sifrenizi giriniz : ");
+//		String sifre = sc.nextLine();
+//
+//		if (Database.kullaniciVarMi(mail, sifre)) {
+//			System.out.println(Database.kullaniciAdi + " basariyla sisteme giris yapti");
+//		} else {
+//			System.out.println("Email ya da sifre hatali");
+//			Database.sayac++;
+//		}
+//		if (Database.sayac == 3) {
+//			System.err.println("3 kere hatalı giriş yaptınız lütfen ana menüden seçim yapın");
+//			Database.sayac = 0;
+//		}
+//
+//	}
 	private void girisYap() {
+		int sayac = 3;
+		while (sayac != 0) {
+			System.out.println("********* Giris Ekrani *********");
+			System.out.print("Lütfen mailinizi giriniz : ");
+			String mail = sc.nextLine();
+			System.out.print("Lütfen sifrenizi giriniz : ");
+			String sifre = sc.nextLine();
 
-		System.out.println("********* Giris Ekrani *********");
-		System.out.print("Lütfen mailinizi giriniz : ");
-		String mail = sc.nextLine();
-		System.out.print("Lütfen sifrenizi giriniz : ");
-		String sifre = sc.nextLine();
+			if (!Database.kullaniciVarMi(mail, sifre)) {
+				System.err.println("Email ya da sifre hatali");
+				System.err.println(sayac + " deneme hakkınız kaldı.");
+				sayac--;
+			} else {
+				break;
+			}
 
-		if (Database.kullaniciVarMi(mail, sifre)) {
-			System.out.println(Database.kullaniciAdi + " basariyla sisteme giris yapti");
-		} else {
-			System.out.println("Email ya da sifre hatali");
-			Database.sayac++;
-		}
-		if (Database.sayac == 3) {
-			System.err.println("3 kere hatalı giriş yaptınız lütfen ana menüden seçim yapın");
-			Database.sayac = 0;
 		}
 
 	}
