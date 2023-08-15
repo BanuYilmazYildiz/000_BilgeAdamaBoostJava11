@@ -10,14 +10,21 @@ public class Test {
 //		pizza.setHanurTipi(EHamurTipi.KALIN);
 //		pizza.setPizzaTuru(ETur.TAVUKLU);
 //		pizza.setFiyat(50);
-		Pizza pizza = new Pizza(EBoyut.KUCUK, EHamurTipi.KALIN, ETur.TAVUKLU, 50);
+//		Pizza pizza = new Pizza(EBoyut.KUCUK, EHamurTipi.KALIN, ETur.TAVUKLU, 50);
+//
+//		System.out.println(pizza.toString());
 
-		System.out.println(pizza.toString());
+//		String isim = Utility.stringDegerAlma("Lutfen bir kelime giriniz : ");
+//		int sayi = Utility.intDegerAlma("Lutfen bir sayi giriniz : ");
 
-		String isim = Utility.stringDegerAlma("Lutfen bir kelime giriniz : ");
-		int sayi = Utility.intDegerAlma("Lutfen bir sayi giriniz : ");
+//		System.out.println(isim);
+		Pizza pizza2 = new Pizza();
 
-		System.out.println(isim);
+//		ETur.values(); // enum ın değerlerinin hepsine erişir.
+		PizzaSiparis siparis = new PizzaSiparis();
+
+		siparis.menu();
+
 	}
 
 }
