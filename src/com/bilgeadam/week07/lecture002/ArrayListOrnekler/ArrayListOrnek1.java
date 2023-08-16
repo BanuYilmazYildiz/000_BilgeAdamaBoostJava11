@@ -3,7 +3,7 @@ package com.bilgeadam.week07.lecture002.ArrayListOrnekler;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayOrnek1 {
+public class ArrayListOrnek1 {
 	/*
 	 * String bir arraylist
 	 * 
