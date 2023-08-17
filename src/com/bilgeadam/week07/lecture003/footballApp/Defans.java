@@ -7,7 +7,7 @@ import java.util.Random;
  * 
  * Defans Sınıfı için oluşturulacak yetenekler 60-90 Arasında
  */
-public class Defans extends Futbolcu {
+public class Defans extends AktifFutbolcu {
 
 	private int pozisyonAlma;
 	private int kafa;
@@ -57,6 +57,22 @@ public class Defans extends Futbolcu {
 	public int randomSayi() {
 		Random random = new Random();
 		return random.nextInt(60, 91);
+	}
+
+	@Override
+	public int pasSkor() {
+		Random random = new Random();
+		int bonus = random.nextInt(0, 5);
+		return (int) (getPas() * 0.2 + getYetenek() * 0.2 + getDayaniklilik() * 0.1 + getDogalForm() * 0.1
+				+ pozisyonAlma * 0.1 + getSans() * 0.2 + bonus);
+	}
+
+	@Override
+	public int golSkor(int kurtaris) {
+		Random random = new Random();
+		int bonus = (int) (random.nextInt(2, 6) * getDogalForm() * 0.075);
+		return (int) (getYetenek() * 0.3 + getSut() * 0.2 + getKararlilik() * 0.1 + getSans() * 0.1 + getKafa() * 0.1
+				+ getSicrama() * 0.1 + getDogalForm() * 0.1 + bonus - kurtaris);
 	}
 
 }

@@ -8,7 +8,7 @@ import java.util.Random;
  * OrtaSaha Sınıfı için oluşturulacak yetenekler 60-100 Arasında
  */
 
-public class OrtaSaha extends Futbolcu {
+public class OrtaSaha extends AktifFutbolcu {
 
 	private int uzunTop;
 	private int ilkDokunus;
@@ -57,11 +57,11 @@ public class OrtaSaha extends Futbolcu {
 		this.uretkenlik = uretkenlik;
 	}
 
-	public int getZelYetenek() {
+	public int getOzelYetenek() {
 		return ozelYetenek;
 	}
 
-	public void setZelYetenek(int zelYetenek) {
+	public void setOzelYetenek(int zelYetenek) {
 		this.ozelYetenek = zelYetenek;
 	}
 
@@ -79,6 +79,22 @@ public class OrtaSaha extends Futbolcu {
 	public int randomSayi() {
 		Random random = new Random();
 		return random.nextInt(60, 101);
+	}
+
+	@Override
+	public int pasSkor() {
+		Random random = new Random();
+		int bonus = random.nextInt(1, 9);
+		return (int) (getPas() * 0.2 + getYetenek() * 0.2 + getOzelYetenek() * 0.2 + getDayaniklilik() * 0.1
+				+ getDogalForm() * 0.1 + getSans() * 0.1 + bonus);
+	}
+
+	@Override
+	public int golSkor(int kurtaris) {
+		Random random = new Random();
+		int bonus = (int) (random.nextInt(1, 7) * getDogalForm() * 0.075);
+		return (int) (getYetenek() * 0.2 + getOzelYetenek() * 0.2 + getSut() * 0.2 + getIlkDokunus() * 0.1
+				+ getKararlilik() * 0.1 + getSans() * 0.1 + getDogalForm() * 0.1 + bonus - kurtaris);
 	}
 
 }

@@ -1,24 +1,26 @@
-package com.bilgeadam.week07.lecture003.footballApp;
+package com.bilgeadam.week07.lecture003.footballAppBenim;
 
 import java.util.Random;
 
-/**
- * Bitiricilik • İlkDokunus • Kafa • Özel Yetenek
- */
-
-public class Forvet extends AktifFutbolcu {
+public class Forvet extends Futbolcu {
 
 	private int bitiricilik;
 	private int ilkDokunus;
 	private int kafa;
 	private int ozelYetenek;
 
-	public Forvet(String adSoyad, int formaNo) {
-		super(adSoyad, formaNo);
-		this.bitiricilik = randomSayi();
-		this.ilkDokunus = randomSayi();
-		this.kafa = randomSayi();
-		this.ozelYetenek = randomSayi();
+	public Forvet(String adSoayd, int formaNo) {
+		super(adSoayd, formaNo);
+		this.bitiricilik = rastgeleYetenekPuani();
+		this.ilkDokunus = rastgeleYetenekPuani();
+		this.kafa = rastgeleYetenekPuani();
+		this.ozelYetenek = rastgeleYetenekPuani();
+	}
+
+	@Override
+	public int rastgeleYetenekPuani() {
+		Random random = new Random();
+		return random.nextInt(70, 101);
 	}
 
 	public int getBitiricilik() {
@@ -56,33 +58,24 @@ public class Forvet extends AktifFutbolcu {
 	@Override
 	public String toString() {
 		return "Forvet [bitiricilik=" + bitiricilik + ", ilkDokunus=" + ilkDokunus + ", kafa=" + kafa + ", ozelYetenek="
-				+ ozelYetenek + ", getAdSoyad()=" + getAdSoyad() + ", getFormaNo()=" + getFormaNo()
+				+ ozelYetenek + ", getAdSoayd()=" + getAdSoayd() + ", getFormaNo()=" + getFormaNo()
 				+ ", getDayaniklilik()=" + getDayaniklilik() + ", getHiz()=" + getHiz() + ", getPas()=" + getPas()
 				+ ", getSut()=" + getSut() + ", getYetenek()=" + getYetenek() + ", getKararlilik()=" + getKararlilik()
 				+ ", getDogalForm()=" + getDogalForm() + ", getSans()=" + getSans() + "]";
 	}
 
 	@Override
-	public int randomSayi() {
-		Random random = new Random();
-		return random.nextInt(70, 101);
-	}
-
-	@Override
-	public int pasSkor() {
+	public boolean pasver() {
 		Random random = new Random();
 		int bonus = random.nextInt(1, 7);
-		return (int) (getPas() * 0.2 + getYetenek() * 0.2 + getOzelYetenek() * 0.2 + getDayaniklilik() * 0.1
-				+ getDogalForm() * 0.1 + getSans() * 0.1 + bonus);
-	}
+		double pasSkoru = getPas() * 0.2 + getYetenek() * 0.2 + getOzelYetenek() * 0.2 + getDayaniklilik() * 0.1
+				+ getSans() * 0.1 + bonus;
+		if (pasSkoru > 65) {
+			return true;
+		} else {
+			return false;
+		}
 
-	@Override
-	public int golSkor(int kurtaris) {
-		Random random = new Random();
-		int bonus = (int) (random.nextInt(1, 6) * getDogalForm() * 0.075);
-		return (int) (getYetenek() * 0.2 + getOzelYetenek() * 0.2 + getSut() * 0.1 + getIlkDokunus() * 0.1
-				+ getKararlilik() * 0.1 + getSans() * 0.1 + getKafa() * 0.1 + getBitiricilik() * 0.2
-				+ getDogalForm() * 0.1 + bonus - kurtaris);
 	}
 
 }

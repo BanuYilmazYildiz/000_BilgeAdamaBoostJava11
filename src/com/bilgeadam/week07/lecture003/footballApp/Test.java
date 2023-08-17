@@ -6,10 +6,14 @@ public class Test {
 
 		Takim takim = new Takim("Takim 1");
 
-		System.out.println(takim.getKaleci());
-		for (Futbolcu futbolcu : takim.getFutbolcular()) {
-			System.out.println(futbolcu);
-		}
+//		System.out.println(takim.getKaleci());
+//		for (AktifFutbolcu futbolcu : takim.getFutbolcular()) {
+//			System.out.println(futbolcu.pasVer());
+//		}
+
+		Mac mac = new Mac();
+//
+		mac.oyna(mac.takimlar.get(0));
 
 	}
 

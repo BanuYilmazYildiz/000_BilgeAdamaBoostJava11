@@ -1,4 +1,4 @@
-package com.bilgeadam.week07.lecture003.footballApp;
+package com.bilgeadam.week07.lecture003.footballAppBenim;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,18 +6,18 @@ import java.util.List;
 public class Takim implements ITakim {
 
 	private String ad;
-	List<AktifFutbolcu> futbolcular;
-	private Kaleci kaleci;
+	List<Futbolcu> futbolcular;
+	Kaleci kaleci;
 
 	public Takim(String ad) {
+
 		super();
-		this.futbolcular = new ArrayList<AktifFutbolcu>();
 		this.ad = ad;
+		this.futbolcular = new ArrayList<Futbolcu>();
 		this.kaleci = new Kaleci("kaleci", 1);
 		defansOlustur();
 		ortaSahaOlustur();
 		forvetOlustur();
-
 	}
 
 	public String getAd() {
@@ -28,11 +28,11 @@ public class Takim implements ITakim {
 		this.ad = ad;
 	}
 
-	public List<AktifFutbolcu> getFutbolcular() {
+	public List<Futbolcu> getFutbolcular() {
 		return futbolcular;
 	}
 
-	public void setFutbolcular(List<AktifFutbolcu> futbolcular) {
+	public void setFutbolcular(List<Futbolcu> futbolcular) {
 		this.futbolcular = futbolcular;
 	}
 
@@ -52,7 +52,7 @@ public class Takim implements ITakim {
 	@Override
 	public void defansOlustur() {
 		for (int i = 1; i <= 4; i++) {
-			Defans defans = new Defans("Defans" + i, i + 1);
+			Defans defans = new Defans("defans" + i, (i + 1));
 			futbolcular.add(defans);
 		}
 
@@ -61,7 +61,7 @@ public class Takim implements ITakim {
 	@Override
 	public void ortaSahaOlustur() {
 		for (int i = 1; i <= 4; i++) {
-			OrtaSaha ortasaha = new OrtaSaha("OrtaSaha" + i, i + 5);
+			OrtaSaha ortasaha = new OrtaSaha("ortasaha" + i, (i + 5));
 			futbolcular.add(ortasaha);
 		}
 
@@ -70,7 +70,7 @@ public class Takim implements ITakim {
 	@Override
 	public void forvetOlustur() {
 		for (int i = 1; i <= 2; i++) {
-			Forvet forvet = new Forvet("OrtaSaha" + i, i + 9);
+			Forvet forvet = new Forvet("ortasaha" + i, (i + 9));
 			futbolcular.add(forvet);
 		}
 
