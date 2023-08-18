@@ -35,7 +35,7 @@ public class Kaleci extends Futbolcu {
 
 	public int kurtarisSkoru() {
 		Random random = new Random();
-		int bonus = (int) (random.nextInt(1, 6) * (getDogalForm() * 0.025));
+		int bonus = (random.nextInt(1, 6) * (int) ((getDogalForm() * 0.025)));
 		return (int) (getKurtarma() * 0.2 + getKararlilik() * 0.1 + bonus);
 	}
 

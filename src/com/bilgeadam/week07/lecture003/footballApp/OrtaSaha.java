@@ -92,6 +92,7 @@ public class OrtaSaha extends AktifFutbolcu {
 	@Override
 	public int golSkor(int kurtaris) {
 		Random random = new Random();
+
 		int bonus = (int) (random.nextInt(1, 7) * getDogalForm() * 0.075);
 		return (int) (getYetenek() * 0.2 + getOzelYetenek() * 0.2 + getSut() * 0.2 + getIlkDokunus() * 0.1
 				+ getKararlilik() * 0.1 + getSans() * 0.1 + getDogalForm() * 0.1 + bonus - kurtaris);

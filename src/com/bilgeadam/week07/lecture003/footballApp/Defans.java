@@ -71,6 +71,7 @@ public class Defans extends AktifFutbolcu {
 	public int golSkor(int kurtaris) {
 		Random random = new Random();
 		int bonus = (int) (random.nextInt(2, 6) * getDogalForm() * 0.075);
+
 		return (int) (getYetenek() * 0.3 + getSut() * 0.2 + getKararlilik() * 0.1 + getSans() * 0.1 + getKafa() * 0.1
 				+ getSicrama() * 0.1 + getDogalForm() * 0.1 + bonus - kurtaris);
 	}
