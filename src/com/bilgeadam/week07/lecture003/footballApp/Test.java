@@ -11,8 +11,8 @@ public class Test {
 //		for (AktifFutbolcu futbolcu : takim.getFutbolcular()) {
 //			System.out.println(futbolcu.pasVer());
 //		}
-		Takim takim = new Takim("Ev Sahibi");
-		Takim takim2 = new Takim("Deplasman");
+		Takim takim = new Takim("Beşiktaş");
+		Takim takim2 = new Takim("Kiev");
 		List<Takim> takimlar = new ArrayList<Takim>();
 		takimlar.add(takim);
 		takimlar.add(takim2);
