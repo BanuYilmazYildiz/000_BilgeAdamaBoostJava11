@@ -47,6 +47,10 @@ public class Test {
 		System.out.println("SKT geçmemiz ve zam yapılmış olanlar");
 		urunManager.zamYap(urunManager.urunler);
 
+		System.out.println("Ürünlerin Ortalama Fiyatı");
+		urunManager.ortalamaHesapla(urunManager.urunler);
+		System.out.println();
+
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class UrunManager {
 	List<Urun> urunler = new ArrayList<Urun>();
@@ -58,6 +59,14 @@ public class UrunManager {
 			return f;
 		}).forEach(System.out::println); // returnde döndüğün her bir y için bu işlemi yap
 		;
+	}
+
+	public void ortalamaHesapla(List<Urun> urun) {
+		double fiyat = urun.stream().collect(Collectors.averagingDouble(Urun::getFiyat)); // 1. yöntem
+		System.out.println("Ürünlerin ortalam fiyatı : " + fiyat);
+
+//		double fiyat2 = urun.stream().mapToDouble(Urun::getFiyat).average().orElse(0.0);
+		urun.stream().mapToDouble(Urun::getFiyat).average().ifPresent(System.out::println);
 	}
 
 }
