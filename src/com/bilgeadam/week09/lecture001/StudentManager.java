@@ -2,6 +2,7 @@ package com.bilgeadam.week09.lecture001;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -11,6 +12,12 @@ import java.util.stream.Collectors;
  * 
  * 2- Ogrencileri bölümlerine göre mapleyen bir metot yazalım. Ciktisini da
  * metot içinde alalım
+ * 
+ * 3- Öğrenci ve not ortalamasını maplayan bir metot
+ * 
+ * 4- Not ortalaması 50'nin altında olanlar -> Kaldı, 70'in altında olanlar
+ * koşullu gecti, 70'in üstünde olanlar geçti, 95 veya üstü olanlar Başarıyla
+ * geçti olmak üzere öğrenci durum güncellemesi yapalım
  */
 
 public class StudentManager {
@@ -67,15 +74,117 @@ public class StudentManager {
 		ogrenciler = List.of(student, student2, student3, student4, student5, student6);
 	}
 
+	public void ogrenciDurumlari() {
+		System.out.println("*** Öğrenci Durum Değişiklikleri ***");
+//		ogrenciler.stream().forEach((ogrenci) -> {
+//			if (ogrenci.notOrtalamasiHesapla() < 50) {
+//				ogrenci.setDurum("Kaldi");
+//			} else if (ogrenci.notOrtalamasiHesapla() < 70) {
+//				ogrenci.setDurum("Kosullu Gecti");
+//			} else if (ogrenci.notOrtalamasiHesapla() >= 70 && ogrenci.notOrtalamasiHesapla() < 95) {
+//				ogrenci.setDurum("Gecti");
+//			} else {
+//				ogrenci.setDurum("Basari ile Gecti");
+//			}
+//
+//		});
+//		ogrenciler.forEach(System.out::println);
+
+//		ogrenciler.stream().filter(x -> {
+//			if (x.notOrtalamasiHesapla() < 50) {
+//				x.setDurum("Kaldi");
+//			} else if (x.notOrtalamasiHesapla() < 70) {
+//				x.setDurum("Kosullu Gecti");
+//			} else if (x.notOrtalamasiHesapla() >= 70 && x.notOrtalamasiHesapla() < 95) {
+//				x.setDurum("Gecti");
+//			} else {
+//				x.setDurum("Basari ile Gecti");
+//			}
+//			return true;
+//		}).forEach(System.out::println);
+
+//		ogrenciler.stream().filter((ogrenci) -> ogrenci.notOrtalamasiHesapla() < 50)
+//				.forEach((x) -> x.setDurum("Kaldi"));
+//		ogrenciler.stream()
+//				.filter((ogrenci) -> ogrenci.notOrtalamasiHesapla() > 50 && ogrenci.notOrtalamasiHesapla() < 70)
+//				.forEach((x) -> x.setDurum("Kosullu Gecti"));
+//		ogrenciler.stream()
+//				.filter((ogrenci) -> ogrenci.notOrtalamasiHesapla() >= 70 && ogrenci.notOrtalamasiHesapla() < 95)
+//				.forEach((x) -> x.setDurum("Gecti"));
+//		ogrenciler.stream().filter((ogrenci) -> ogrenci.notOrtalamasiHesapla() >= 95)
+//				.forEach((x) -> x.setDurum("Basari ile Gecti"));
+//		ogrenciler.forEach(System.out::println);
+
+		ogrenciler.stream().map((ogrenci) -> {
+			if (ogrenci.notOrtalamasiHesapla() < 50) {
+				ogrenci.setDurum("Kaldi");
+			} else if (ogrenci.notOrtalamasiHesapla() < 70) {
+				ogrenci.setDurum("Kosullu Gecti");
+			} else if (ogrenci.notOrtalamasiHesapla() >= 70 && ogrenci.notOrtalamasiHesapla() < 95) {
+				ogrenci.setDurum("Gecti");
+			} else {
+				ogrenci.setDurum("Basari ile Gecti");
+			}
+			return ogrenci;
+		}).forEach(System.out::println);
+
+	}
+
+	public void ogrenciVeNotOrtalamasi() {
+		Map<String, Double> notOrtalamaMap = ogrenciler.stream()
+				.collect(Collectors.toMap((s) -> s.getIsim(), (v) -> v.notOrtalamasiHesapla()));
+		Map<Student, Double> notOrtalamaMap2 = ogrenciler.stream()
+				.collect(Collectors.toMap((s) -> s, Student::notOrtalamasiHesapla));
+
+		System.out.println("*** Öğrenciler ve Not Ortalamaları ***");
+		notOrtalamaMap.forEach((k, v) -> {
+			System.out.println(k + " -> " + v);
+		});
+//		notOrtalamaMap2.entrySet().forEach(System.out::println);
+	}
+
+	public void bolumeGoreAyir() {
+		Map<String, List<Student>> bolumlerMap = ogrenciler.stream().collect(Collectors.groupingBy(Student::getBolum));
+		Map<String, List<Student>> bolumlerMap2 = ogrenciler.stream()
+				.collect(Collectors.groupingBy((s) -> s.getBolum()));
+		System.out.println();
+		System.out.println("*** Bölümlere Göre Map ***");
+		bolumlerMap2.forEach((k, v) -> {
+			System.out.println(k + " -> " + v);
+		});
+
+		// isimleri alt alta yazdırma
+//		bolumlerMap.forEach((k, v) -> {
+//			System.out.println(k);
+//			v.forEach((s) -> System.out.println(s.getIsim()));
+//		});
+
+		// Alt alta yazdırabilmek için
+//		bolumlerMap.forEach((k, v) -> {
+//			System.out.println(k);
+//			v.forEach(System.out::println);
+//		});
+
+//		System.out.println();
+//		bolumlerMap2.entrySet().forEach(System.out::println);
+
+//		for (Entry<String, List<Student>> bolumler : bolumlerMap.entrySet()) {
+//			System.out.println(bolumler.getKey() + " = " + bolumler.getValue());
+//		}
+
+	}
+
 	public void ogrenciNotOrtalama() {
 		List<Double> ortalamaNotlar = new ArrayList<Double>();
 
 		// 1. çözüm -> map
-//		ortalamaNotlar = ogrenciler.stream()
-//				.map(o -> o.getNotlar().stream().collect(Collectors.averagingDouble(Double::doubleValue)))
-//				// Double dediğimiz ::double -> veri double olarak geliyor double olarak çıkıyor
-//				.collect(Collectors.toList());
-//		ortalamaNotlar.forEach(System.out::println);
+		System.out.println("*** Ogrencilerin Not Ortalamasi ***");
+
+		ortalamaNotlar = ogrenciler.stream()
+				.map(o -> o.getNotlar().stream().collect(Collectors.averagingDouble(Double::doubleValue)))
+				// Double dediğimiz ::double -> veri double olarak geliyor double olarak çıkıyor
+				.collect(Collectors.toList());
+		ortalamaNotlar.forEach(System.out::println);
 
 		// 2. çözüm -> for-Each
 //		ogrenciler.stream().forEach((ogrenci -> {
@@ -93,17 +202,20 @@ public class StudentManager {
 //		ortalamaNotlar = ogrenciler.stream().map(ogrenc -> ogrenc.notOrtalamasiHesapla()).collect(Collectors.toList());
 //		ortalamaNotlar.forEach(System.out::println);
 
+		System.out.println();
+		System.out.println("*** Sinifin Not Ortalamasi ***");
 		Double ort = ogrenciler.stream().map((ogrenci) -> ogrenci.notOrtalamasiHesapla()).collect(Collectors.toList())
 				.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
 		System.out.println(ort);
 
-		Double ort2 = ogrenciler.stream().map(ogr -> ogr.notOrtalamasiHesapla())
-				.collect(Collectors.averagingDouble(Double::doubleValue));
-		System.out.println(ort2);
-
-		Double ort3 = ogrenciler.stream().collect(Collectors.averagingDouble(
-				(z) -> z.getNotlar().stream().collect(Collectors.averagingDouble(Double::doubleValue))));
-		System.out.println(ort3);
+//		Double ort2 = ogrenciler.stream().map(ogr -> ogr.notOrtalamasiHesapla())
+//				.collect(Collectors.averagingDouble(Double::doubleValue));
+//		System.out.println(ort2);
+//
+//		Double ort3 = ogrenciler.stream().collect(Collectors.averagingDouble(
+//				(z) -> z.getNotlar().stream().collect(Collectors.averagingDouble(Double::doubleValue))));
+//		System.out.println(ort3);
 
 	}
+
 }

@@ -5,6 +5,11 @@ public class Test {
 
 		StudentManager studentManager = new StudentManager();
 		studentManager.ogrenciNotOrtalama();
+		studentManager.bolumeGoreAyir();
+		System.out.println();
+		studentManager.ogrenciVeNotOrtalamasi();
+		System.out.println();
+		studentManager.ogrenciDurumlari();
 
 	}
 
