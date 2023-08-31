@@ -18,12 +18,11 @@ public class DogumGunu {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Doğum tarihinizi giriniz : ");
+		System.out.print("Dogum tarihinizi giriniz : ");
 		String tarih = sc.nextLine();
 		LocalDate dogumgunu = LocalDate.parse(tarih);
 		LocalDate bugun = LocalDate.now();
 
-		System.out.println();
 		System.out.print("Dogdunuz gunden bugune kadar -> " + dogumgunu.until(bugun, ChronoUnit.YEARS) + " yil, ");
 		System.out.print(dogumgunu.until(bugun, ChronoUnit.MONTHS) + " ay, ");
 		System.out.print(dogumgunu.until(bugun, ChronoUnit.WEEKS) + " hafta, ");
@@ -36,7 +35,7 @@ public class DogumGunu {
 		}
 
 		System.out.println("Bir sonraki dogum gunu : " + gelecekDogumGunu);
-		System.out.print("Gelecek Doğum Gününe " + bugun.until(gelecekDogumGunu, ChronoUnit.MONTHS) + " ay, ");
+		System.out.print("Gelecek dogum gunune" + bugun.until(gelecekDogumGunu, ChronoUnit.MONTHS) + " ay, ");
 		System.out.print(bugun.until(gelecekDogumGunu, ChronoUnit.WEEKS) + " hafta, ");
 		System.out.println(bugun.until(gelecekDogumGunu, ChronoUnit.DAYS) + " gun kaldi.");
 	}
